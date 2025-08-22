@@ -48,10 +48,11 @@ const cards = [
 ];
 
 function SearchingCard(array) {
+     const fragment = document.createDocumentFragment();
     array.forEach(item => {
    
        const card = document.createElement("div");
-       card.classList.add("card");
+       card.classList.add("card","fade-in");
        const img = document.createElement("img");
          img.src = item.imageUrl;
        const cardcontent= document.createElement("div");
@@ -67,9 +68,11 @@ function SearchingCard(array) {
         cardcontent.appendChild(carddesc);
         card.appendChild(img);  
         card.appendChild(cardcontent);
-        document.querySelector(".cards").appendChild(card);
+         fragment.appendChild(card);
+        
 
     });
+    document.querySelector(".cards").appendChild(fragment);
 }
 SearchingCard(cards);
 
